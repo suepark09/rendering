@@ -1,26 +1,5 @@
-// function makeSingleCircle(circle) {
-//     // circle.join()
-
-//     let html = ''
-//     html = circle.join() 
-
-//     // TODO: put circle HTML stuff here
-
-//     return html
-// }
-
-// const circle1 = {
-//     radius: 50,
-//     color: 'blue'
-// }
-
-
-
-// console.assert(makeSingleCircle(circle1) === 'xxx50yyybluezzz')
-
 function oneCircle(circle) {
-    // console.log('this is circle:', circle)
-    // console.log('this is circles:', circles)
+
     return `
     <div class="text-center mt-5">
         <code>
@@ -35,9 +14,13 @@ function oneCircle(circle) {
     </div> `
 }
 
-function renderCircles(circlesList) {
-    let viewCircles = []
+//this function returns the styles for ONE circle
 
+function renderCircles(circlesList) {
+//this function renders circles into the browser and applies the oneCircle
+//function into each item of the circles object
+    let viewCircles = [];
+//Created new array to put the shapes in
 
     for(let i = 0; i < circlesList.length; i++) {
         
