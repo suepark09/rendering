@@ -2,7 +2,6 @@ function oneCircle(circle) {
 
     return `
     <div class="text-center mt-5">
-        <code>
         <div style ="
         border-radius: 50%; 
         height: calc(${circle.radius}*2px);
@@ -10,7 +9,6 @@ function oneCircle(circle) {
         background-color:${circle.color};
         ">
         </div>
-        </code>
     </div> `
 }
 

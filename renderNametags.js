@@ -1,7 +1,7 @@
 function nametagStyles(nametag) {
     return `
     <div class="text-center mt-5">
-     <code>
+    
         <div style ="
         height: 120px;
         width:  250px;
@@ -25,7 +25,6 @@ function nametagStyles(nametag) {
 
         ` + nametag + `
         </div>
-     </code>
     </div>
     `
 }
@@ -33,8 +32,8 @@ function nametagStyles(nametag) {
 function renderNametags(nametags) {
     let viewNametags = [];
     for(let i = 0; i < nametags.length; i++) {
-        let nametagBottom = nametagStyles(nametags[i])
-        viewNametags.push(nametagBottom)
+        let wholeNametag = nametagStyles(nametags[i])
+        viewNametags.push(wholeNametag)
     }
 
     return viewNametags.join(" ")
