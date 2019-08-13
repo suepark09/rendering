@@ -12,6 +12,7 @@ function oneCircle(circle) {
     </div> `
 }
 
+
 //this function returns the styles for ONE circle
 
 function renderCircles(circlesList) {
