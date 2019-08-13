@@ -47,29 +47,42 @@ function absentStudentStyles(student) {
     `
 }
 
-function renderStudents(studentsAbstraction) {
 
+function renderStudents(studentsAbstraction) {
+  
     let viewStudents = [];
 
     for(let i = 0; i < studentsAbstraction.length; i++) {
+       
         let student = studentsAbstraction[i];
-        
-        // let absentStudent = absentStudentStyles(studentsAbstraction[i])
-        // console.log('present student', student.isPresent)
+     
         if(student.isPresent === true) {
             viewStudents.push(presentStudentStyles(student))
-            
         } 
         else {
             student.isPresent === "absent"
             viewStudents.push(absentStudentStyles(student))
         }
+
+
+    //TRYING TO CHANGE TRUE INTO "HERE" AND FALSE INTO "ABSENT"    
+
+        // let absent = "absent"
+        let here = viewStudents[i].isPresent
+
+        if(student.isPresent === true) {
+            here = "here"
+            // viewStudents.push(student.isPresent)
+        } else {
+            absent = student.isPresent
+        }
+
     }
    
     
 
     return viewStudents.join(" ")
-    console.log('students abstraction', studentsAbstraction)
+  
 }
 
 
@@ -82,6 +95,8 @@ function renderStudents(studentsAbstraction) {
 //create function that cycles through students array. possibly use 
 //for loop with if statements inside
 //if isPresent is true it should be green, else false. 
+
+
 
 var studentsAbstraction = [
     {
