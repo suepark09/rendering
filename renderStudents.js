@@ -1,5 +1,11 @@
 
-function presentStudentStyles(students) {
+function presentStudentStyles(student) {
+    let attendance = "";
+    if (student.isPresent === true) {
+        attendance = "here"; 
+    } else {
+        attendance = "absent"; 
+    }
     return `
             <div style="
             height: 80px;
@@ -11,11 +17,11 @@ function presentStudentStyles(students) {
             margin: 20px;
             font-size: 30px;
             ">
-            `+ students.name +`
+            `+ student.name +`
             <div style="
             font-size: 18px;
             ">
-            `+ students.isPresent +`
+            `+ attendance +`
             </div> 
             </div>
         </div>
@@ -24,6 +30,13 @@ function presentStudentStyles(students) {
 
 
 function absentStudentStyles(student) {
+    let attendance = "";
+    if (student.isPresent === true) {
+        attendance = "here"; 
+    } else {
+        attendance = "absent"; 
+    }
+
     return `
             <div style="
             height: 80px;
@@ -39,7 +52,7 @@ function absentStudentStyles(student) {
             <div style="
             font-size: 18px;
             ">
-            `+ student.isPresent +`
+            `+ attendance +`
             
             </div> 
             </div>
@@ -65,17 +78,10 @@ function renderStudents(studentsAbstraction) {
         }
 
 
-    //TRYING TO CHANGE TRUE INTO "HERE" AND FALSE INTO "ABSENT"    
+    
 
-        // let absent = "absent"
-        let here = viewStudents[i].isPresent
-
-        if(student.isPresent === true) {
-            here = "here"
-            // viewStudents.push(student.isPresent)
-        } else {
-            absent = student.isPresent
-        }
+      
+        
 
     }
    
