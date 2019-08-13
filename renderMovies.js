@@ -1,10 +1,55 @@
 
-function renderMovies(movies) {
+function moviesStyling(movies) {
+
+    //movie rating
+    let decimalRating = movies.rottenTomatoesRating;
+    let rottenTomatoesRating = decimalRating * 100;
+
+    //movie poster
+    let imgTag = document.createElement("img");
+    console.log('image exists?', imgTag); 
+    imgTag.src =  movies.poster
+    // document.getElementsByClassName('movie-image').appendChild(imgTag);
+
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
+        <div class="mt-5" style="float: left;">
+            <div class="movie-container">
+                <div class="movie-image">
+                   
+                </div>
+                <div class="movie-info" style= "
+                background-color: #f0f0f0;
+                border-radius: 5px;
+                height: 200px; 
+                width: 250px;
+                margin: 15px;
+                padding: 20px;
+                ">
+                
+                   <h5> `+ movies.title +` </h5>
+                   <h6 style= "
+                   font-size: 12px;
+                   margin-top: -5px;
+                   "> 
+                   `+ movies.year +`
+                    </h6>
+                   <p>IMDB:<br> `+ movies.imdbRating +` / 10</p>
+                   <p>RottenTomatoes:<br> `+ rottenTomatoesRating +`% </p>
+                </div>
+            
+            </div>
         </div>
     `
+}
+
+function renderMovies(movies) {
+    let viewMovies = [];
+    for(let i = 0; i < movies.length; i++) {
+        let singleMovie = moviesStyling(movies[i]); 
+        viewMovies.push(singleMovie);
+    }
+
+    return viewMovies.join('')
 }
 
 function movies() {
