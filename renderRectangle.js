@@ -24,3 +24,5 @@ function rectangle() {
     content.innerHTML = renderRectangle(rectangleAbstraction);
 
 }
+
+console.log('test');
