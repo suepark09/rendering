@@ -1,10 +1,46 @@
 
-function renderTweets(tweets) {
+function renderTweetsStyling(tweets) {
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(tweets)}</code>
+        <div class="mt-5">
+            <div style="
+                border: solid 1px black;
+                padding: 20px;
+                height: 100%;
+                width: 450px;
+            ">
+            <div class="firstLine" style="
+                display: flex;
+                flex-direction: row;
+                "
+                >
+                    <img src="${tweets.user.profilePic}" height="40px" width="40px" style="margin-right: 10px;">
+                <div class="names">
+                    `+ tweets.user.username +`<br>
+                    `+ tweets.user.handle +`
+                 </div>
+            </div>
+            <div class="tweetContent" style="font-size: 23px; line-height: 30px; padding-top: 12px;">
+                `+ tweets.text +`
+            </div>
+            <div class="icons">
+            <hr>
+            `+ tweets.replies +`
+            `+ tweets.retweets +`
+            `+ tweets.likes +`
+            </div>
+            </div>
         </div>
     `
+}
+
+function renderTweets(tweets) {
+   let viewTweet = [];
+   for(let i = 0; i < tweets.length; i++) {
+        let singleTweet = renderTweetsStyling(tweets[i]);
+        viewTweet.push(singleTweet);
+   }
+
+   return viewTweet.join("")
 }
 
 function tweets() {
