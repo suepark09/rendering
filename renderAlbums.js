@@ -1,10 +1,47 @@
 
-function renderAlbums(albums) {
+function renderAlbumsStyles(albums) {
+
+   
+    let album = "";
+    let song
+    let songLength
+
+    for(let i =0; i < albums.albums[i].length; i++) {
+       
+     album = albums.albums[i].title
+     console.log('what is this', albums.albums[i].length)
+     return album
+    
+     
+    }
+
+
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(albums)}</code>
+        <div class="mt-5">
+           <h1>${albums.artist}</h1>
+           <hr>
+           <img src="${albums.albums.albumCover}" height:"30px">
+           <h4>${albums.albums.title}</h4>
+           <hr>
+           <div style="
+            display: flex;
+            flex-direction: row;
+           ">
+           </div>
         </div>
     `
+}
+
+function renderAlbums(albums) {
+
+    let viewAlbums= [];
+
+    for(let i =0; i < albums.length; i++) {
+        let singleAlbum = renderAlbumsStyles(albums[i]);
+        viewAlbums.push(singleAlbum);
+    }
+
+return viewAlbums.join("");
 }
 
 function albums() {
@@ -78,6 +115,8 @@ function albums() {
             ]
         }
     ]
+
+ 
 
     content.innerHTML = renderAlbums(albumsAbstraction);
 
