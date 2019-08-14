@@ -5,31 +5,29 @@ function moviesStyling(movies) {
     let decimalRating = movies.rottenTomatoesRating;
     let rottenTomatoesRating = decimalRating * 100;
 
-    //movie poster
-    let imgTag = document.createElement("img");
-    console.log('image exists?', imgTag); 
-    imgTag.src =  movies.poster
-    // document.getElementsByClassName('movie-image').appendChild(imgTag);
+    //grey background for content
+    let contentStyle = document.getElementById("content").style;
+    contentStyle.backgroundColor = "#dbdbdb";
+    contentStyle.padding = "15px";
 
     return `
-        <div class="mt-5" style="float: left;">
-            <div class="movie-container">
-                <div class="movie-image">
-                   
+        <div class="mt-5">
+            <div class="container" style="display: flex; flex-direction: row;">
+                <div class="movie-img">
+                   <img height= "200px" src="${movies.poster}">
                 </div>
                 <div class="movie-info" style= "
-                background-color: #f0f0f0;
+                background-color: #f5f5f5;
                 border-radius: 5px;
                 height: 200px; 
+                margin-left: 15px;
                 width: 250px;
-                margin: 15px;
                 padding: 20px;
                 ">
                 
                    <h5> `+ movies.title +` </h5>
                    <h6 style= "
-                   font-size: 12px;
-                   margin-top: -5px;
+                   font-size: 14px;
                    "> 
                    `+ movies.year +`
                     </h6>
@@ -83,5 +81,5 @@ function movies() {
     ]
 
     content.innerHTML = renderMovies(moviesAbstraction);
-
+   
 }
