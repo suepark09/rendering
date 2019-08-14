@@ -5,10 +5,10 @@ function moviesStyling(movies) {
     let decimalRating = movies.rottenTomatoesRating;
     let rottenTomatoesRating = decimalRating * 100;
 
-    //grey background for content
-    let contentStyle = document.getElementById("content").style;
-    contentStyle.backgroundColor = "#dbdbdb";
-    contentStyle.padding = "15px";
+    //grey background for
+    // let contentStyle = document.getElementById("content").style;
+    // contentStyle.backgroundColor = "#dbdbdb";
+    // contentStyle.padding = "15px";
 
     return `
         <div class="mt-5">
